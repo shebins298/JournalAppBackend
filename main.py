@@ -42,7 +42,10 @@ def analyze_entry():
         model = genai.GenerativeModel("gemini-1.5-flash")
 
         response = model.generate_content(
-            f"User journal: {entry}\nGive therapy. Use Cognitive Behavioral Therapy. give advice as if therapist taking to patient. keep things simple. dont explicitly say using cbt"
+            f"User journal: {entry}\nYou are a cognitive behavioral therapy (CBT) expert.
+
+  Based on the user's journal entry before this and identified negative patterns, suggest alternative, more balanced thoughts to challenge and reframe those patterns.
+  Return an array of suggested restructured thoughts."
         )
 
         if hasattr(response, "text"):
