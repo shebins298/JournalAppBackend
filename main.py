@@ -39,7 +39,7 @@ def analyze_entry():
             print("⚠️ Empty journal entry received")
             return jsonify({"error": "Journal entry cannot be empty"}), 400
 
-        model = genai.GenerativeModel("gemini-pro")
+        model = genai.GenerativeModel("gemini-1.5-flash")
 
         response = model.generate_content(
             f"User journal: {entry}\nGive professional personal development advice."
