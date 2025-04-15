@@ -52,9 +52,13 @@ def analyze_entry():
             print("❌ Unexpected response structure:", response)
             return jsonify({"error": "Invalid response from Gemini"}), 500
 
+
+
     except Exception as e:
-        print("❌ Error during AI generation:", repr(e))
-        return jsonify({"error": "AI service failed"}), 500
+        error_message = repr(e)  # Shows full error detail
+        print("❌ Error during AI generation:", error_message)
+        return jsonify({"error": error_message}), 500  # Return full error (DEV ONLY)
+
 
 if __name__ == "__main__":
     app.run(debug=True)
