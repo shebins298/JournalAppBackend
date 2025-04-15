@@ -42,7 +42,7 @@ def analyze_entry():
         model = genai.GenerativeModel("gemini-1.5-flash")
 
         response = model.generate_content(
-            f"User journal: {entry}\nGive professional personal development advice. Use Cognitive Behavioral Therapy"
+            f"User journal: {entry}\nGive therapy. Use Cognitive Behavioral Therapy. give advice as if therapist taking to patient. keep things simple. dont explicitly say using cbt"
         )
 
         if hasattr(response, "text"):
