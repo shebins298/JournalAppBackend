@@ -5,7 +5,8 @@ import os
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, origins=["https://shebins298.github.io"])
+
 
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
