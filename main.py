@@ -19,6 +19,10 @@ try:
 except Exception as config_err:
     print("❌ Error configuring Gemini:", config_err)
 
+@app.route("/", methods=["GET"])
+def home():
+    return "✅ Gemini backend is live!", 200
+
 @app.route("/analyze", methods=["POST"])
 def analyze_entry():
     try:
